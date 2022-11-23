@@ -1,0 +1,19 @@
+<section>
+  <div class='overlay'>
+    <h1 class = 'title fm'>Pet app</h1>
+    <nav class='nav'>
+    <ul>
+      <% if !user_signed_in? %>
+      <li class='login'>
+        <%= link_to "LOG IN", new_user_session_path, class: 'btn main-bg text-dark mt-4 login'%>
+      </li>
+      <li class='signup'>
+        <%= link_to "SIGN UP", new_user_registration_path, class: 'btn main-bg text-dark mt-4 signup' %>
+      </li>
+      <% else %>
+      <%= link_to 'Groups', groups_path, class: 'button is-primary is-small' %>
+      <% end %>
+    </ul>
+  </nav>
+  </div>
+</section>
