@@ -26,6 +26,8 @@ gem "stimulus-rails"
 
 gem 'devise'
 
+gem 'cancancan'
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
