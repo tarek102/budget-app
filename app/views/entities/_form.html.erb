@@ -18,13 +18,14 @@
 
   <div>
     <%= form.label :amount, style: "display: block" %>
-    <%= form.number_field :amount %>
+    <%= form.text_field :amount %>
   </div>
 
-  <div>
-    <%= form.label :author_id, style: "display: block" %>
-    <%= form.number_field :author_id %>
-  </div>
+  <div class="control">
+      <%= form.label :group, class: "mb-2" %>
+      <%= form.collection_select :group_id, 
+      Group.where("user_id = ?", current_user.id).order(:name), :id, :name, class:'form-control mb-3 p-2' %>
+    </div>
 
   <div>
     <%= form.submit %>

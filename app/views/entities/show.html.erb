@@ -1,5 +1,7 @@
 <h1 class='title is-size-1 has-text-centered'>
   <%= @entity.name %>
+  <p><strong>Time of transaction:</strong> <%= @entity.created_at %> </p>
+  <p><strong>Amount:</strong> $<%= @entity.amount %></p>
 </h1>
 
 <div class='level-left'>
