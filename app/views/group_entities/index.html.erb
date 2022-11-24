@@ -1,0 +1,42 @@
+<section>
+  <div class='has-background-info has-text-white'>
+    <h1 class='title is-size-2 has-text-centered has-text-white'>Entities</h1>
+  </div>
+  <div class='title-amount p-3'>
+    <div class='title_div'>
+      <p class='is-size-4'><%= @group.name %> expenses
+      </p>   
+    </div>
+    <div>
+      <p class='is-size-4 total_cat_amount'> $<%= @group.total_expenses %></p>
+    </div>
+  </div>
+  <div class='container'>
+    <% if @entities.empty? %>
+      <p class='subtitle is-5 has-text-centered mt-5'>There are currently no expenditures</p>
+    <% else %>
+    <% @entities.each do |entity| %>
+      <div class='card trans_card mt-5'>
+        <div class='card-content'>
+          <div class='exp-name'>
+            <p><%= entity.name %></p>
+            <p class='date'><%= entity.created_at.strftime("%d/%m/%Y") %></p>
+          </div>
+          <div>
+              <p> $<%= entity.amount %></p>
+          </div>
+          <div class='view'>
+            <%= link_to "View", entity_path(entity), class: 'button is-small is-info' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <% end %>
+  </div>
+  <div class='new_group has-background-info'>
+    <p class='level-item'>
+      <%= link_to "ADD NEW TRANSACTION", new_entity_path, class: 'has-text-white' %>
+    </p>
+  </div>
+</section>
+

@@ -11,7 +11,8 @@
       </div>
 
       <div class="col">
-        <%= link_to group.name, group_path(group) %>
+        <%= link_to group.name, group_group_entities_path(group) %>
+        <p>Amount: $<%= group.total_expenses %></p>
       </div>
       <%= render group %>
       <div class='actions mt-5'>

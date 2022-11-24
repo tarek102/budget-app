@@ -1,10 +1,9 @@
-<p style="color: green"><%= notice %></p>
+<h1 class='title is-size-1 has-text-centered'>
+  <%= @entity.name %>
+</h1>
 
-<%= render @entity %>
-
-<div>
-  <%= link_to "Edit this entity", edit_entity_path(@entity) %> |
-  <%= link_to "Back to entities", entities_path %>
-
-  <%= button_to "Destroy this entity", @entity, method: :delete %>
+<div class='level-left'>
+  <p class='level-item'>
+    <%= link_to "Back to Entities", :back, class: 'button is-info is-small' %>
+  </p>
 </div>

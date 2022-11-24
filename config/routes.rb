@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   end
   
   resources :entities
-  resources :groups
-  resources :splash, only: %i[index]
+  resources :groups, only: [:index, :new, :create, :edit, :update, :destroy] do
+    resources :group_entities, only: [:index]
+  end
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
